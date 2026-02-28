@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arabic Sound Button</title>
+
+<style>
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    font-family: Arial, sans-serif;
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 100px;
+    position: absolute;
+    top: 20px;
+    color: red;
+    margin: 0;
+    text-align: center;
+}
+
+.sound-btn {
+    height: 300px;
+    width: 500px;
+    max-width: 100%;
+    padding: 15px;
+    font-size: 300px;
+    line-height: 1;
+    border: none;
+    border-radius: 120px;
+    cursor: pointer;
+    color: black;
+    transition: 0.3s;
+}
+
+.sound-btn:hover {
+    background: black;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Large tablets / small laptops */
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 72px;
+        top: 24px;
+    }
+
+    .sound-btn {
+        width: 420px;
+        height: 240px;
+        font-size: 220px;
+        border-radius: 96px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 52px;
+        top: 18px;
+    }
+
+    .sound-btn {
+        width: 320px;
+        height: 190px;
+        font-size: 160px;
+        border-radius: 72px;
+    }
+}
+
+/* Large phones */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 36px;
+        top: 60px;
+    }
+
+    .sound-btn {
+        width: 240px;
+        height: 140px;
+        font-size: 110px;
+        border-radius: 56px;
+        padding: 10px;
+    }
+}
+
+/* Small phones */
+@media (max-width: 360px) {
+    h1 {
+        font-size: 28px;
+        top: 10px;
+    }
+
+    .sound-btn {
+        width: 200px;
+        height: 115px;
+        font-size: 86px;
+        border-radius: 44px;
+        padding: 8px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+
+    <h1>Click me Please</h1>
+
+    <button class="sound-btn" onclick="playSound()">ف</button>
+
+    <!-- Hidden Audio -->
+    <audio id="audio">
+        <source src="/sound/fahhhhhhhhhhhhhh.mp3" type="audio/mpeg">
+    </audio>
+
+
+<script>
+    function playSound() {
+        const audio = document.getElementById("audio");
+        audio.currentTime = 0; // restart sound if clicked again
+        audio.play();
+        document.querySelector("h1").textContent = "FAhhhhhhhhhhhhhh";
+    }
+</script>
+
+</body>
+</html>
